@@ -3,6 +3,7 @@ import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Date;
 
 public class Main {
 
@@ -47,6 +48,9 @@ public class Main {
             // Run rules function
             case 2 -> {
                 rules();
+                // two-second delay to show process working (and to test .sleep)
+                try {Thread.sleep(2000);}
+                catch(InterruptedException ex) {ex.printStackTrace();}
                 menu();
             }
             // Exit game
