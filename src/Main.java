@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.awt.Desktop;
 import java.io.IOException;
@@ -32,6 +33,7 @@ public class Main {
 
     public static void menu(){
         Scanner myObj = new Scanner(System.in);
+        int choice = 0;
         System.out.println("WELCOME TO BLACKJACK!!");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~\n");
         System.out.println("Please choose an option:");
@@ -40,7 +42,13 @@ public class Main {
         System.out.println("3: EXIT GAME\n");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~\n");
 
-        int choice = myObj.nextInt();
+        // Error checking user input, needs to be an int
+        try{
+            choice = myObj.nextInt();
+        } catch (InputMismatchException a){
+            System.out.println("Not a valid input, please try again and select 1 - 3");
+            menu();
+        }
         switch (choice) {
             // Run blackjack game
             case 1 -> System.out.println("Running game");
