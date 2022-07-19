@@ -7,7 +7,7 @@ import java.net.URISyntaxException;
 public class Main {
 
     public static void rules(){
-
+        System.out.println("Opening rules in your default browser...");
         String url = "https://bicyclecards.com/how-to-play/blackjack/";
 
         // Cross-platform url opener, code provided by Brajesh Kumar - Stackoverflow.com
@@ -45,7 +45,10 @@ public class Main {
             // Run blackjack game
             case 1 -> System.out.println("Running game");
             // Run rules function
-            case 2 -> rules();
+            case 2 -> {
+                rules();
+                menu();
+            }
             // Exit game
             case 3 -> {
                 System.out.println("Thank you for playing");
