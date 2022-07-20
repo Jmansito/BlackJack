@@ -1,5 +1,6 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
 
@@ -23,7 +24,11 @@ public class Main {
         }
         switch (choice) {
             // Run blackjack game
-            case 1 -> System.out.println("Running game");
+            case 1 -> {
+                System.out.println("Running game");
+                System.out.println("Printing out a card from the getCard method");
+                System.out.println(game.getCard());
+            }
             // Run rules function
             case 2 -> {
                 rules.ruleCall();

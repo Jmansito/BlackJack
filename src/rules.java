@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+@SuppressWarnings("deprecation")
 public class rules extends Main{
     public static void ruleCall() {
         System.out.println("Opening rules in your default browser...");
